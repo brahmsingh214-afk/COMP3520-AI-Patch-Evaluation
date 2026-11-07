@@ -1,0 +1,25 @@
+Repair Dedup.java. Given a non-null integer array, unique must return the first occurrence of each value in input order without modifying the input. Preserve the public method signature. Return only the complete Dedup.java file. The buggy implementation and existing tests follow.
+
+import java.util.Arrays;
+
+public final class Dedup {
+    public static int[] unique(int[] values) {
+        return Arrays.stream(values).sorted().distinct().toArray();
+    }
+}
+
+import java.util.Arrays;
+
+public final class Visible {
+    public static void main(String[] args) {
+        check(new int[]{3, 1, 2}, Dedup.unique(new int[]{3, 1, 3, 2}));
+    }
+
+    static void check(int[] expected, int[] actual) {
+        if (!Arrays.equals(expected, actual)) {
+            throw new AssertionError("Expected " + Arrays.toString(expected)
+                + ", got " + Arrays.toString(actual));
+        }
+    }
+}
+

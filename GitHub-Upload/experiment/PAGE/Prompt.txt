@@ -1,0 +1,21 @@
+Repair Pages.java. Given a nonnegative int item count and a positive int page size, count returns the number of pages needed to hold all items, including any partially filled page. Preserve the public method signature. Return only the complete Pages.java file. The buggy implementation and existing tests follow.
+
+public final class Pages {
+    public static int count(int items, int pageSize) {
+        return items / pageSize;
+    }
+}
+
+public final class Visible {
+    public static void main(String[] args) {
+        check(11, 5, 3);
+    }
+
+    static void check(int items, int pageSize, int expected) {
+        int actual = Pages.count(items, pageSize);
+        if (actual != expected) {
+            throw new AssertionError("Expected " + expected + ", got " + actual);
+        }
+    }
+}
+

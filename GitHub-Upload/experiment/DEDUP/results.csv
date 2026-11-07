@@ -1,0 +1,4 @@
+case,version,compiled,visible_exit,independent_exit,tool,model
+DEDUP,original,yes,1,1,,
+DEDUP,reference,yes,0,0,,
+DEDUP,candidate,yes,0,0,ChatGPT,unrecorded

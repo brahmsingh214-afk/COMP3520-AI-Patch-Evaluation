@@ -1,0 +1,4 @@
+case,version,compiled,visible_exit,independent_exit,tool,model
+TRANSFER,original,yes,1,0,,
+TRANSFER,reference,yes,0,0,,
+TRANSFER,candidate,yes,0,0,ChatGPT,unrecorded

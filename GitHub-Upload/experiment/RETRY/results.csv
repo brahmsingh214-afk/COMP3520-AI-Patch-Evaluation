@@ -1,0 +1,4 @@
+case,version,compiled,visible_exit,independent_exit,tool,model
+RETRY,original,yes,1,1,,
+RETRY,reference,yes,0,0,,
+RETRY,candidate,yes,0,0,ChatGPT,unrecorded

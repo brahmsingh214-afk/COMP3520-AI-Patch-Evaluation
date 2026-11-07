@@ -1,0 +1,15 @@
+Repair Average.java. The mean method takes any two Java int values and returns their arithmetic mean as a double. Preserve the public method signature. Return only the complete Average.java file. The buggy implementation and existing tests follow.
+
+public final class Average {
+    public static double mean(int a, int b) {
+        return (a + b) / 2;
+    }
+}
+
+public final class Visible {
+    public static void main(String[] args) {
+        double actual = Average.mean(2, 3);
+        if (actual != 2.5) throw new AssertionError("Expected 2.5, got " + actual);
+    }
+}
+

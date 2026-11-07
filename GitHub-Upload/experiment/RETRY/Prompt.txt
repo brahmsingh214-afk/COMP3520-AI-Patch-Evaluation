@@ -1,0 +1,21 @@
+Repair Retry.java. Given positive int base and cap values and a nonnegative int attempt, delay returns the smaller of cap and the mathematical value base multiplied by 2 to the power of attempt. Preserve the public method signature. Return only the complete Retry.java file. The buggy implementation and existing tests follow.
+
+public final class Retry {
+    public static int delay(int base, int attempt, int cap) {
+        return base << attempt;
+    }
+}
+
+public final class Visible {
+    public static void main(String[] args) {
+        check(100, 4, 500, 500);
+    }
+
+    static void check(int base, int attempt, int cap, int expected) {
+        int actual = Retry.delay(base, attempt, cap);
+        if (actual != expected) {
+            throw new AssertionError("Expected " + expected + ", got " + actual);
+        }
+    }
+}
+

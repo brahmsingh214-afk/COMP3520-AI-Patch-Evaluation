@@ -1,0 +1,21 @@
+Repair PathCheck.java. Given two non-null absolute slash-separated paths, contains returns true if the normalized candidate equals the normalized base or is a descendant by whole path segments. Normalize both paths lexically by ignoring empty and dot segments and resolving dot-dot segments without moving above root. Use slash-separated semantics on every operating system. Do not access the filesystem or resolve symbolic links. Preserve the public method signature. Return only the complete PathCheck.java file. The buggy implementation and existing tests follow.
+
+public final class PathCheck {
+    public static boolean contains(String base, String candidate) {
+        return candidate.startsWith(base);
+    }
+}
+
+public final class Visible {
+    public static void main(String[] args) {
+        check("/srv/app", "/srv/application/a", false);
+    }
+
+    static void check(String base, String candidate, boolean expected) {
+        boolean actual = PathCheck.contains(base, candidate);
+        if (actual != expected) {
+            throw new AssertionError(candidate + ": expected " + expected + ", got " + actual);
+        }
+    }
+}
+

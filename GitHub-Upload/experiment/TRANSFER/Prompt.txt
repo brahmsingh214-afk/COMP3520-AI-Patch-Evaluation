@@ -1,0 +1,30 @@
+Repair Transfer.java. Given an int array containing two nonnegative balances (source at index 0 and destination at index 1) and a positive int amount, move must subtract the amount from the source and add it to the destination, returning true, only if the source can pay and the destination balance fits in a Java int. On rejection, return false and leave both balances unchanged. Preserve the public method signature. Return only the complete Transfer.java file. The buggy implementation and existing tests follow.
+
+public final class Transfer {
+    public static boolean move(int[] balances, int amount) {
+        if (balances[0] < amount) return false;
+        balances[0] -= amount;
+        if (balances[1] > Integer.MAX_VALUE - amount) return false;
+        balances[1] += amount;
+        return true;
+    }
+}
+
+public final class Visible {
+    public static void main(String[] args) {
+        check(10, Integer.MAX_VALUE, 1, false, 10, Integer.MAX_VALUE);
+    }
+
+    static void check(int source, int destination, int amount,
+                      boolean expectedSuccess, int expectedSource, int expectedDestination) {
+        int[] balances = {source, destination};
+        boolean success = Transfer.move(balances, amount);
+        if (success != expectedSuccess || balances[0] != expectedSource
+                || balances[1] != expectedDestination) {
+            throw new AssertionError("Expected " + expectedSuccess + " with balances ["
+                + expectedSource + ", " + expectedDestination + "], got " + success
+                + " with balances [" + balances[0] + ", " + balances[1] + "]");
+        }
+    }
+}
+
